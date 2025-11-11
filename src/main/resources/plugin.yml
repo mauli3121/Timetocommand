@@ -1,0 +1,12 @@
+name: TimeScheduler
+main: com.mauli.timescheduler.TimeSchedulerPlugin
+version: 1.0.0
+api-version: '1.21'
+author: Liago
+commands:
+  timescheduler:
+    description: Reloads the TimeScheduler config
+    permission: timescheduler.reload
+permissions:
+  timescheduler.reload:
+    default: op

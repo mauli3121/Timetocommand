@@ -1,0 +1,21 @@
+# Ausführungs-Check-Intervall in Sekunden (kleiner = präziser, größer = weniger Ressourcen)
+check-interval-seconds: 5
+
+# Standard-Zeitzone, wenn bei einem Eintrag keine angegeben ist
+default-timezone: "Europe/Berlin"
+
+schedules:
+  # --- Einmaliger Command (Konsole) ---
+  - id: "welcome-dec1"
+    datetime: "2025-12-01 20:30"   # Format: yyyy-MM-dd HH:mm
+    timezone: "Europe/Berlin"      # optional, sonst default
+    command: "say Willkommen zum Event!"
+    run-as: "CONSOLE"              # CONSOLE | PLAYER:<Name>
+    repeat: "NONE"                 # NONE | DAILY | WEEKLY | MONTHLY
+
+  # --- Wiederkehrend täglich als Spieler ---
+  - id: "daily-reward"
+    datetime: "2025-12-01 09:00"
+    command: "give %player% diamond 1"
+    run-as: "PLAYER:Alex"          # führt der Spieler Alex aus
+    repeat: "DAILY"
